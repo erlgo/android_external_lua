@@ -5,11 +5,11 @@
 # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT =======================
 
 # Your platform. See PLATS for possible values.
-PLAT= posix
+PLAT= none
 
 # Where to install. The installation starts in the src and doc directories,
 # so take care if INSTALL_TOP is not an absolute path.
-INSTALL_TOP= ../../build/lua
+INSTALL_TOP= /usr/local
 INSTALL_BIN= $(INSTALL_TOP)/bin
 INSTALL_INC= $(INSTALL_TOP)/include
 INSTALL_LIB= $(INSTALL_TOP)/lib
@@ -48,7 +48,7 @@ TO_MAN= lua.1 luac.1
 
 # Lua version and release.
 V= 5.1
-R= 5.1.4
+R= 5.1.5
 
 all:	$(PLAT)
 
@@ -59,9 +59,11 @@ test:	dummy
 	src/lua test/hello.lua
 
 install: dummy
-	cd src && $(MKDIR) $(INSTALL_BIN) $(INSTALL_LIB) $(INSTALL_LMOD) $(INSTALL_CMOD)
+	cd src && $(MKDIR) $(INSTALL_BIN) $(INSTALL_INC) $(INSTALL_LIB) $(INSTALL_MAN) $(INSTALL_LMOD) $(INSTALL_CMOD)
 	cd src && $(INSTALL_EXEC) $(TO_BIN) $(INSTALL_BIN)
+	cd src && $(INSTALL_DATA) $(TO_INC) $(INSTALL_INC)
 	cd src && $(INSTALL_DATA) $(TO_LIB) $(INSTALL_LIB)
+	cd doc && $(INSTALL_DATA) $(TO_MAN) $(INSTALL_MAN)
 
 ranlib:
 	cd src && cd $(INSTALL_LIB) && $(RANLIB) $(TO_LIB)
