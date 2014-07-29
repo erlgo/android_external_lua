@@ -26,10 +26,11 @@ include $(BUILD_PREBUILT)
 LOCAL_PATH := $(androidluapath)
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := hello.lua
+LOCAL_MODULE := lua.ase.hello.sample
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(LUA_LIBS_PATH)
+LOCAL_MODULE_PATH := $(LUA_LIBS_PATH)/samples
+LOCAL_MODULE_STEM := ase.notify.lua
 
 LOCAL_REQUIRED_MODULES := lua.android
 

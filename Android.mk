@@ -52,6 +52,7 @@ ifeq (liblua, $(filter liblua, $(ALL_MODULES)))
 liblua := $(call intermediates-dir-for, STATIC_LIBRARIES, liblua)/liblua.a
 $(LOCAL_MODULE):
 	@echo -e ${CL_CYN}"Install: $(TARGET_OUT)/lib/lua/$@.a $(testlua)"${CL_RST}
+	@mkdir -p $(TARGET_OUT)/lib/lua
 	@cp $(liblua) $(TARGET_OUT)/lib/lua/
 endif
 
