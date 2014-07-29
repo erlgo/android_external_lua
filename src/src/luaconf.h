@@ -95,14 +95,19 @@
 
 #else // Modified for use with CyanogenMod.
 #define LUA_ROOT "/system/"
-#define LUA_LDIR LUA_ROOT "share/lua/5.1/"
+#define LUA_LDIR LUA_ROOT "usr/share/lua/5.1/"
 #define LUA_CDIR LUA_ROOT "lib/lua/5.1/"
+#define LUA_DDIR "/data/local/lua/5.1/"
 #define LUA_PATH_DEFAULT \
-    "./?.lua;" LUA_LDIR"?/?.lua;" LUA_LDIR"?.lua;" LUA_LDIR"?/init.lua;" \
-    LUA_CDIR"?.lua;" LUA_CDIR"?/init.lua;" \
+    "./?.lua;" \
+    LUA_DDIR"?/?.lua;" LUA_DDIR"?.lua;" LUA_DDIR"?/init.lua;" \
+    LUA_LDIR"?/?.lua;" LUA_LDIR"?.lua;" LUA_LDIR"?/init.lua;" \
+    LUA_CDIR"?/?.lua;" LUA_CDIR"?.lua;" LUA_CDIR"?/init.lua;" \
     "/sdcard/ase/scripts/?.lua;"
 #define LUA_CPATH_DEFAULT \
-    "./?.so;" LUA_CDIR"?.so;" LUA_CDIR"loadall.so;" LUA_CDIR"?/init.sl;" \
+    "./?.so;" \
+    LUA_DDIR"?.so;" LUA_DDIR"?/init.sl;" \
+    LUA_CDIR"?.so;" LUA_CDIR"loadall.so;" LUA_CDIR"?/init.sl;" \
     LUA_CDIR"?/?.so;"
 #endif
 
