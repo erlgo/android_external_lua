@@ -93,7 +93,7 @@
 #define LUA_CPATH_DEFAULT \
 	".\\?.dll;"  LUA_CDIR"?.dll;" LUA_CDIR"loadall.dll"
 
-#else // Modified for use with CyanogenMod.
+#else /* Modified for use with CyanogenMod. */
 #define LUA_ROOT "/system/"
 #define LUA_LDIR LUA_ROOT "usr/share/lua/5.1/"
 #define LUA_CDIR LUA_ROOT "lib/lua/5.1/"
