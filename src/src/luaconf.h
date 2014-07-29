@@ -93,8 +93,8 @@
 #define LUA_CPATH_DEFAULT \
 	".\\?.dll;"  LUA_CDIR"?.dll;" LUA_CDIR"loadall.dll"
 
-#else // Modified for use with ASE.
-#define LUA_ROOT "/data/data/com.googlecode.luaforandroid/lua/"
+#else // Modified for use with CyanogenMod.
+#define LUA_ROOT "/system/"
 #define LUA_LDIR LUA_ROOT "share/lua/5.1/"
 #define LUA_CDIR LUA_ROOT "lib/lua/5.1/"
 #define LUA_PATH_DEFAULT \
@@ -649,7 +649,7 @@ union luai_Cast { double l_d; long l_l; };
 #include <unistd.h>
 #define LUA_TMPNAMBUFSIZE	32
 #define lua_tmpnam(b,e)	{ \
-	strcpy(b, "/tmp/lua_XXXXXX"); \
+	strcpy(b, "/data/local/tmp/lua_XXXXXX"); \
 	e = mkstemp(b); \
 	if (e != -1) close(e); \
 	e = (e == -1); }
