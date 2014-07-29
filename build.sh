@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -n "$ANDROID_BUILD_TOP" ] ; then
+  echo "Type 'mma' after lunch to build in Android Repo"
+  exit
+fi
+
 rm lua.zip
 cd src && \
 make && \
