@@ -7,10 +7,10 @@
 # Your platform. See PLATS for possible values.
 PLAT= none
 
-CC= agcc
-CFLAGS= -O2 -Wall $(MYCFLAGS) -ldl -DLUA_USE_DLOPEN
-AR= arm-eabi-ar rcu
-RANLIB= arm-eabi-ranlib
+CC= gcc
+CFLAGS= -O2 -Wall $(MYCFLAGS)
+AR= ar rcu
+RANLIB= ranlib
 RM= rm -f
 LIBS= -lm $(MYLIBS)
 
