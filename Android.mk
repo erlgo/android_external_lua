@@ -57,7 +57,7 @@ $(LOCAL_MODULE):
 endif
 
 # ========================================================
-# lua
+# lua /system/xbin
 # ========================================================
 
 LOCAL_PATH := $(lua_root)/src/src
@@ -73,11 +73,11 @@ LOCAL_SHARED_LIBRARIES := libdl
 LOCAL_STATIC_LIBRARIES := liblua
 # LOCAL_REQUIRED_MODULES := luacore liblua
 
-LOCAL_MODULE_RELATIVE_PATH := $(TARGET_OPTIONAL_EXECUTABLES)
+LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 include $(BUILD_EXECUTABLE)
 
 # ========================================================
-# luac
+# luac /system/xbin
 # ========================================================
 
 LOCAL_PATH := $(lua_root)/src/src
@@ -91,8 +91,7 @@ LOCAL_LDFLAGS += -Wl,--no-fatal-warnings
 
 LOCAL_STATIC_LIBRARIES := liblua
 # LOCAL_REQUIRED_MODULES := luacore liblua
-
-LOCAL_MODULE_RELATIVE_PATH := $(TARGET_OPTIONAL_EXECUTABLES)
+LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 include $(BUILD_EXECUTABLE)
 
 USER_WANT_ASE_INTF := 0
