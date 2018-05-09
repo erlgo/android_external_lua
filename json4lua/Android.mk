@@ -35,4 +35,3 @@ LOCAL_MODULE_STEM := init.lua
 LOCAL_SRC_FILES := json.lua
 LOCAL_REQUIRED_MODULES := lua.json.rpc lua.json.rpcserver
 include $(BUILD_PREBUILT)
-

@@ -94,5 +94,5 @@ LOCAL_STATIC_LIBRARIES := liblua
 LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 include $(BUILD_EXECUTABLE)
 
-USER_WANT_ASE_INTF := 0
+USER_WANT_ASE_INTF := 1
 include $(call all-makefiles-under,$(lua_root))
