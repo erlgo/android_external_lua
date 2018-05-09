@@ -18,7 +18,7 @@ LOCAL_C_INCLUDES := external/lua/src/src
 LOCAL_SRC_FILES := $(LUASOCKET_SRC)
 LOCAL_CFLAGS := $(lualibscflags)
 LOCAL_STATIC_LIBRARIES := liblua
-LOCAL_MODULE_PATH := $(LUA_LIBS_PATH)/socket
+LOCAL_MODULE_RELATIVE_PATH := $(LUA_LIBS_PATH)/socket
 include $(BUILD_SHARED_LIBRARY)
 
 # wrapper to the renamed shared lib
@@ -42,7 +42,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := external/lua/src/src
 LOCAL_SRC_FILES := mime.c
 LOCAL_SHARED_LIBRARIES := liblua-socket
-LOCAL_MODULE_PATH := $(LUA_LIBS_PATH)/mime
+LOCAL_MODULE_RELATIVE_PATH := $(LUA_LIBS_PATH)/mime
 
 include $(BUILD_SHARED_LIBRARY)
 
