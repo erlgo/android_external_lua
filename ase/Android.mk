@@ -14,7 +14,7 @@ LOCAL_MODULE := lua.android
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_STEM := init.lua
-LOCAL_MODULE_PATH := $(LUA_LIBS_PATH)/android
+LOCAL_MODULE_RELATIVE_PATH := $(LUA_LIBS_PATH)/android
 
 # depends on json ase
 LOCAL_REQUIRED_MODULES := lua.json
@@ -29,7 +29,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := lua.ase.hello.sample
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(LUA_LIBS_PATH)/samples
+LOCAL_MODULE_RELATIVE_PATH := $(LUA_LIBS_PATH)/samples
 LOCAL_MODULE_STEM := ase.notify.lua
 
 LOCAL_REQUIRED_MODULES := lua.android
